@@ -27,7 +27,7 @@ private val lightColorScheme = CustomColorScheme(
     background = TestWarna1,
     onBackground = TestWarna1,
     primary = TestWarna1,
-    onPrimary = TestWarna1,
+    onPrimary = yellow,
     secondary = TestWarna1,
     onSecondary = TestWarna1
 )

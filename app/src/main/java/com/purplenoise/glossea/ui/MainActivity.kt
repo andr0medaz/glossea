@@ -14,6 +14,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import com.purplenoise.glossea.ui.component.atom.PrimaryButton
 import com.purplenoise.glossea.ui.theme.CustomTheme
 
 class MainActivity : ComponentActivity() {
@@ -26,7 +28,10 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = CustomTheme.colorScheme.background
                     ){
-                    Greeting(name = "Android")
+                    PrimaryButton(
+                        text="test",
+                        onClick = {},
+                        modifier = Modifier.padding(16.dp))
                 }
             }
         }
@@ -47,7 +52,8 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     CustomTheme {
-        Greeting("Android")
-}
+//        Greeting("Android")
+            PrimaryButton(text = "test", onClick = {})
+    }
 
 }
