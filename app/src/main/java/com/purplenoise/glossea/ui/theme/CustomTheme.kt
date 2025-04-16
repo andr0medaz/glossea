@@ -34,32 +34,32 @@ private val lightColorScheme = CustomColorScheme(
 
 private val typography = CustomTypography(
     titleLarge = TextStyle(
-        fontFamily = Helvetica,
+        fontFamily = Maison_Neue,
         fontWeight = FontWeight.Bold,
         fontSize = 24.sp
     ),
     titleNormal = TextStyle(
-        fontFamily = Helvetica,
+        fontFamily = Maison_Neue,
         fontWeight = FontWeight.Bold,
         fontSize = 20.sp
     ),
     body = TextStyle(
-        fontFamily = Helvetica,
+        fontFamily = Maison_Neue,
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp
     ),
     labelLarge = TextStyle(
-        fontFamily = Helvetica,
+        fontFamily = Maison_Neue,
         fontWeight = FontWeight.Medium,
         fontSize = 14.sp
     ),
     labelNormal = TextStyle(
-        fontFamily = Helvetica,
+        fontFamily = Maison_Neue,
         fontWeight = FontWeight.Medium,
         fontSize = 12.sp
     ),
     labelSmall = TextStyle(
-        fontFamily = Helvetica,
+        fontFamily = Maison_Neue,
         fontWeight = FontWeight.Medium,
         fontSize = 10.sp
     )
