@@ -25,7 +25,7 @@ fun PrimaryButton(
         modifier = modifier,
         colors = ButtonDefaults.buttonColors(
             containerColor = containerColor,
-            contentColor = Color.Black
+            contentColor = contentColor
         )
     ){
         Text(
