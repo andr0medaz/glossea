@@ -24,7 +24,7 @@ private val darkColorScheme = CustomColorScheme(
 )
 
 private val lightColorScheme = CustomColorScheme(
-    background = gray,
+    background = white,
     onBackground = TestWarna1,
     primary = black,
     onPrimary = yellow,

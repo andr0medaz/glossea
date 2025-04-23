@@ -1,47 +1,61 @@
 package com.purplenoise.glossea.ui.component.atom
 
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
+
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import com.purplenoise.glossea.ui.theme.CustomTheme
+import kotlinx.coroutines.delay
+
 
 
 @Composable
-fun PrimaryButton(
-    text: String,
-    onClick: () -> Unit,
+fun CenteredAutoResetButton(
     modifier: Modifier = Modifier,
-    containerColor: Color = CustomTheme.colorScheme.primary,
-    contentColor: Color = CustomTheme.colorScheme.onPrimary
-//    backgroundColor: Color = MaterialTheme.colorScheme.primary,
+    resetDelayMillis: Long = 2000L
 ) {
-    Button(
-        onClick = onClick, // ← hanya "hook" interaksi, bukan logika
-        modifier = modifier,
-        colors = ButtonDefaults.buttonColors(
-            containerColor = containerColor,
-            contentColor = contentColor
-        )
-    ){
-        Text(
-            text = text,
-            style = CustomTheme.typography.labelLarge
-        )
-    }
-}
+    val colors = CustomTheme.colorScheme
+    val typography = CustomTheme.typography
+    val shapes = CustomTheme.shape
 
-@Preview(showBackground = true)
-@Composable
-fun Preview() {
-    CustomTheme {
-        PrimaryButton(
-            text = "Next",
-            onClick = {}
-        )
+    var isClicked by remember { mutableStateOf(false) }
+
+    if (isClicked) {
+        LaunchedEffect(Unit) {
+            delay(resetDelayMillis)
+            isClicked = false
+        }
+    }
+
+    Box(
+        modifier = modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center
+    ) {
+        Button(
+            onClick = { isClicked = true },
+            modifier = Modifier.height(48.dp),
+            shape = shapes.button,
+            colors = ButtonDefaults.buttonColors(
+                containerColor = if (isClicked) colors.secondary else colors.primary
+            )
+        ) {
+            Text(
+                text = if (isClicked) "Clicked!" else "Next",
+                color = colors.onPrimary,
+                style = typography.labelLarge
+            )
+        }
     }
 }

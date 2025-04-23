@@ -17,4 +17,4 @@ val green = Color(0xFF0CBC8B)
 val white = Color(0xFFFFFFFF)
 val black = Color(0xFF000000)
 
-val TestWarna1 = Color(0xFFFF0B55) // Contoh definisi TestWarna1
+val TestWarna1 = Color(0xFF0CBC8B)
