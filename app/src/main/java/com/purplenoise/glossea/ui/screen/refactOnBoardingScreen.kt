@@ -1,6 +1,7 @@
 package com.purplenoise.glossea.ui.screen
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -10,10 +11,13 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.Button
@@ -31,12 +35,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.purplenoise.glossea.R
+import com.purplenoise.glossea.ui.component.atom.CenteredAutoResetButton
 import com.purplenoise.glossea.ui.theme.CustomTheme
 
 @Composable
 fun OnboardingScreenScaffold(
-    onNextClick: () -> Unit = {},
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onNextClick: () -> Unit = {}
 ) {
     val colors = CustomTheme.colorScheme
     val typography = CustomTheme.typography
@@ -47,16 +52,28 @@ fun OnboardingScreenScaffold(
         containerColor = colors.background,
         bottomBar = {
             // Tombol di bawah
-            Button(
-                onClick = onNextClick,
+            Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(48.dp)
-                    .padding(horizontal = 24.dp, vertical = 16.dp),
-                shape = shapes.button,
-                colors = ButtonDefaults.buttonColors(containerColor = colors.primary)
+                    .background(colors.background)
+                    .navigationBarsPadding()
+                    .padding(
+                        start = 24.dp,
+                        end = 24.dp,
+                        top = 16.dp,
+                        bottom = 200.dp // Naikkan tombol dari bawah
+                    )
             ) {
-                Text("Next", color = colors.onPrimary, style = typography.labelLarge)
+                Button(
+                    onClick = onNextClick,
+                    modifier = Modifier
+                        .height(48.dp)
+                        .align(Alignment.Center),
+                    shape = shapes.button,
+                    colors = ButtonDefaults.buttonColors(containerColor = colors.primary)
+                ) {
+                    Text("Next", color = colors.onPrimary, style = typography.labelLarge)
+                }
             }
         }
     ) { innerPadding ->
@@ -64,68 +81,77 @@ fun OnboardingScreenScaffold(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding)
-                .padding(horizontal = 24.dp, vertical = 16.dp),
         ) {
-            // Icon Close di pojok kanan atas
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.End
-            ) {
-                Icon(
-                    imageVector = Icons.Default.Close,
-                    contentDescription = "Close",
-                    tint = colors.onBackground,
-                    modifier = Modifier.size(24.dp)
-                )
-            }
-
-            Spacer(modifier = Modifier.height(24.dp))
-
-            // Konten utama
             Column(
-                horizontalAlignment = Alignment.CenterHorizontally,
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier
+                    .weight(1f)
+                    .verticalScroll(rememberScrollState())
+                    .padding(horizontal = 24.dp, vertical = 16.dp)
             ) {
-                Image(
-                    painter = painterResource(id = R.drawable.illustration_1),
-                    contentDescription = "Illustration",
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(200.dp),
-                    contentScale = ContentScale.Fit
-                )
-
-                Spacer(modifier = Modifier.height(16.dp))
-
-                Text(
-                    text = "About the test",
-                    style = typography.titleNormal,
-                    color = colors.onBackground
-                )
-
-                Spacer(modifier = Modifier.height(16.dp))
-
-                Text(
-                    text = "A 20-30 minute test of TOEFL reading exercise",
-                    style = typography.body,
-                    color = colors.onBackground,
-                    textAlign = TextAlign.Center,
-                    modifier = Modifier.fillMaxWidth()
-                )
+                // Icon Close di pojok kiri atas
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.Start
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.Close,
+                        contentDescription = "Close",
+                        tint = colors.primary,
+                        modifier = Modifier.size(24.dp)
+                    )
+                }
 
                 Spacer(modifier = Modifier.height(24.dp))
 
+                // Konten utama
                 Column(
-                    verticalArrangement = Arrangement.spacedBy(CustomTheme.size.small)
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    modifier = Modifier.fillMaxWidth()
                 ) {
-                    StepItem(number = 1, text = "Reading to find information")
-                    StepItem(number = 2, text = "Basic comprehension")
-                    StepItem(number = 3, text = "Reading to learn")
+                    Text(
+                        text = "About the test",
+                        style = typography.titleLarge,
+                        color = colors.primary,
+                        textAlign = TextAlign.Center,
+                        modifier = Modifier.fillMaxWidth()
+                    )
+
+                    Spacer(modifier = Modifier.height(16.dp))
+
+                    Image(
+                        painter = painterResource(id = R.drawable.illustration_1),
+                        contentDescription = "Illustration",
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(200.dp),
+                        contentScale = ContentScale.Fit
+                    )
+
+                    Spacer(modifier = Modifier.height(16.dp))
+
+                    Text(
+                        text = "A 20-30 minute test of TOEFL reading exercise",
+                        style = typography.body,
+                        color = colors.onBackground,
+                        textAlign = TextAlign.Center,
+                        modifier = Modifier.fillMaxWidth()
+                    )
+
+                    Spacer(modifier = Modifier.height(24.dp))
+
+                    Column(
+                        verticalArrangement = Arrangement.spacedBy(CustomTheme.size.small)
+                    ) {
+                        StepItem(number = 1, text = "Reading to find information")
+                        StepItem(number = 2, text = "Basic comprehension")
+                        StepItem(number = 3, text = "Reading to learn")
+                    }
                 }
             }
         }
     }
 }
+
 
 
 @Composable

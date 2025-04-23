@@ -15,7 +15,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.purplenoise.glossea.ui.component.atom.PrimaryButton
 import com.purplenoise.glossea.ui.screen.OnboardingScreen
 import com.purplenoise.glossea.ui.screen.OnboardingScreenScaffold
 import com.purplenoise.glossea.ui.theme.CustomTheme
