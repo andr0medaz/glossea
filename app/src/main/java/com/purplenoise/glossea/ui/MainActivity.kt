@@ -16,6 +16,8 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.purplenoise.glossea.ui.component.atom.PrimaryButton
+import com.purplenoise.glossea.ui.screen.OnboardingScreen
+import com.purplenoise.glossea.ui.screen.OnboardingScreenScaffold
 import com.purplenoise.glossea.ui.theme.CustomTheme
 
 class MainActivity : ComponentActivity() {
@@ -24,36 +26,14 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             CustomTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = CustomTheme.colorScheme.background
-                    ){
-                    PrimaryButton(
-                        text="test",
-                        onClick = {},
-                        modifier = Modifier.padding(16.dp))
-                }
+                OnboardingScreenScaffold(
+                    onNextClick = {
+                        // Aksi ketika klik "Next"
+                    }
+                )
             }
         }
     }
 }
 
 
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    CustomTheme {
-//        Greeting("Android")
-            PrimaryButton(text = "test", onClick = {})
-    }
-
-}
