@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 private val darkColorScheme = CustomColorScheme(
-    background = white,
+    background = gray,
     onBackground = TestWarna1,
     primary = black,
     onPrimary = TestWarna1,

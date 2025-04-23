@@ -13,7 +13,8 @@ val Pink40 = Color(0xFF7D5260)
 val orange = Color(0xFFFF3300)
 val gray = Color(0xFFD9D9D9)
 val yellow = Color(0xFFFFC600)
-val TestWarna1 = Color(0xFF0CBC8B)
-
+val green = Color(0xFF0CBC8B)
+val white = Color(0xFFFFFFFF)
 val black = Color(0xFF000000)
-val white = Color(0xFFFFFFFF) // Contoh definisi TestWarna1
+
+val TestWarna1 = Color(0xFF0CBC8B)
