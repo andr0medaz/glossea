@@ -35,8 +35,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.purplenoise.glossea.R
+import com.purplenoise.glossea.ui.component.BottomBar
 import com.purplenoise.glossea.ui.component.atom.CenteredAutoResetButton
 import com.purplenoise.glossea.ui.theme.CustomTheme
+
 
 @Composable
 fun OnboardingScreenScaffold(
@@ -51,29 +53,20 @@ fun OnboardingScreenScaffold(
         modifier = modifier,
         containerColor = colors.background,
         bottomBar = {
-            // Tombol di bawah
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .background(colors.background)
-                    .navigationBarsPadding()
-                    .padding(
-                        start = 24.dp,
-                        end = 24.dp,
-                        top = 16.dp,
-                        bottom = 200.dp // Naikkan tombol dari bawah
-                    )
-            ) {
+            Column {
                 Button(
                     onClick = onNextClick,
                     modifier = Modifier
-                        .height(48.dp)
-                        .align(Alignment.Center),
+                        .fillMaxWidth()
+                        .padding(horizontal = 24.dp)
+                        .height(48.dp),
                     shape = shapes.button,
                     colors = ButtonDefaults.buttonColors(containerColor = colors.primary)
                 ) {
                     Text("Next", color = colors.onPrimary, style = typography.labelLarge)
                 }
+
+                BottomBar()
             }
         }
     ) { innerPadding ->
@@ -187,5 +180,6 @@ fun StepItem(number: Int, text: String) {
 fun OnboardingScreenPreview() {
     CustomTheme {
         OnboardingScreen()
+
     }
 }

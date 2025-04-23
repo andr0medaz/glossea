@@ -38,7 +38,7 @@ fun HomeButton(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Icon(
-                painter = painterResource(id = R.drawable.frame),
+                painter = painterResource(id = R.drawable.beranda),
                 contentDescription = "Home Icon",
                 modifier = Modifier.size(24.dp),
                 tint = colors.primary
