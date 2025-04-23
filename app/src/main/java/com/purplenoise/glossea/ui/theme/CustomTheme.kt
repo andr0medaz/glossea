@@ -14,9 +14,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 private val darkColorScheme = CustomColorScheme(
-    background = TestWarna1,
+    background = white,
     onBackground = TestWarna1,
-    primary = TestWarna1,
+    primary = black,
     onPrimary = TestWarna1,
     secondary = TestWarna1,
     onSecondary = TestWarna1
@@ -24,9 +24,9 @@ private val darkColorScheme = CustomColorScheme(
 )
 
 private val lightColorScheme = CustomColorScheme(
-    background = TestWarna1,
+    background = white,
     onBackground = TestWarna1,
-    primary = TestWarna1,
+    primary = black,
     onPrimary = yellow,
     secondary = TestWarna1,
     onSecondary = TestWarna1
