@@ -19,6 +19,13 @@ activityCompose = "1.10.1"
 composeBom = "2024.09.00"
 navigationCompose = "2.8.9"
 
+# Material3 XML
+materialXml = "1.11.0"
+
+# Splash Screen
+coreSplashscreen = "1.1.9"
+
+
 [libraries]
 # Core Android & Kotlin
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -42,6 +49,13 @@ androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
+
+# Splash
+androidx-core-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "coreSplashscreen" }
+
+# Material3 XML
+material3-xml = { group = "com.google.android.material", name = "material", version.ref = "materialXml" }
+
 
 [plugins]
 # Plugins

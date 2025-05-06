@@ -63,11 +63,13 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.ui.test.junit4)
-    implementation("androidx.compose.material3:material3:1.4.0-alpha12")
-    implementation ("androidx.compose.material:material:1.6.0")
 
+    // Splash Screen
+    implementation(libs.androidx.core.splashscreen)
 
+    // Material3 XML
+    implementation(libs.material3.xml)
 
-
+   
 
 }
