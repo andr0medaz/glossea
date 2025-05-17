@@ -18,7 +18,10 @@ import androidx.compose.ui.unit.dp
 import com.purplenoise.glossea.presentation.LearningPlanViewModel
 
 @Composable
-fun LearningPlanScreen(viewModel: LearningPlanViewModel) {
+fun LearningPlanScreen(
+    viewModel: LearningPlanViewModel,
+    onStartClick: () -> Unit
+) {
     val plan by viewModel.learningPlan.collectAsState()
 
     plan?.let {
@@ -49,9 +52,12 @@ fun LearningPlanScreen(viewModel: LearningPlanViewModel) {
                     Spacer(modifier = Modifier.height(8.dp))
                     Text(text = it.description, style = MaterialTheme.typography.bodyMedium)
                     Spacer(modifier = Modifier.height(12.dp))
-                    Button(onClick = { /* TODO: Handle click */ }) {
+                    Button(onClick = onStartClick) {
                         Text("Start Now")
                     }
+//                    Button(onClick = { /* TODO: Handle click */ }) {
+//                        Text("Start Now")
+//                    }
                 }
             }
         }
