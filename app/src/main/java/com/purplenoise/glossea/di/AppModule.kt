@@ -1,5 +1,4 @@
 //di/AppModule.kt
-
 package com.purplenoise.glossea.di
 
 import com.purplenoise.glossea.data.repository.LearningRepository

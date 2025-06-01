@@ -1,3 +1,4 @@
+// data/model/Question.kt
 package com.purplenoise.glossea.data.model
 
 data class Question(
