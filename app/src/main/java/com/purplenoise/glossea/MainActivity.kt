@@ -17,8 +17,6 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             GlosseaTheme {
-//                val viewModel: LearningPlanViewModel = hiltViewModel()
-//                LearningPlanScreen(viewModel)
                 val navController = rememberNavController()
                 AppNavGraph(navController = navController)
             }

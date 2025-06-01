@@ -55,9 +55,6 @@ fun LearningPlanScreen(
                     Button(onClick = onStartClick) {
                         Text("Start Now")
                     }
-//                    Button(onClick = { /* TODO: Handle click */ }) {
-//                        Text("Start Now")
-//                    }
                 }
             }
         }

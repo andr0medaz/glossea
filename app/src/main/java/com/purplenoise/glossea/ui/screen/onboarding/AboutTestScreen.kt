@@ -55,7 +55,6 @@ fun OnBoardingAboutTestScreen(onNextClick: () -> Unit) {
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(200.dp)
-//                    .padding(bottom = 16.dp)
 
             )
             Spacer(Modifier.height(16.dp))
@@ -87,3 +86,4 @@ fun OnBoardingAboutTestScreen(onNextClick: () -> Unit) {
         }
     }
 }
+
