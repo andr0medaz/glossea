@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">glossea</string>
+    <string name="txt_home">Beranda</string>
+    <string name="txt_latihan">Latihan</string>
+    <string name="txt_simulasi">Simulasi</string>
+    <string name="txt_profil">Profil</string>
 </resources>
