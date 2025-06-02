@@ -4,5 +4,5 @@ package com.purplenoise.glossea.data.repository
 import com.purplenoise.glossea.data.model.LearningPlan
 
 interface LearningRepository {
-    fun getLearningPlan(): LearningPlan
+    fun getLearningPlans(): List<LearningPlan>
 }

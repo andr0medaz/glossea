@@ -59,7 +59,7 @@ class QuizViewModel @Inject constructor(
             val currentQuestion = _state.value.currentQuestion()!!
             val isCorrect = currentQuestion.correctAnswer == selectedOption
 
-            // 1. Update state dengan jawaban pengguna & status benar/salah
+            // Update state dengan jawaban pengguna & status benar/salah
             _state.update {
                 it.copy(
                     selectedAnswer = selectedOption,

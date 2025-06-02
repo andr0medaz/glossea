@@ -8,6 +8,7 @@ import com.purplenoise.glossea.data.repository.LearningRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import javax.inject.Inject
 
 @HiltViewModel
@@ -15,10 +16,10 @@ class LearningPlanViewModel @Inject constructor(
     private val repository: LearningRepository
 ) : ViewModel() {
 
-    private val _learningPlan = MutableStateFlow<LearningPlan?>(null)
-    val learningPlan: StateFlow<LearningPlan?> = _learningPlan
+    private val _learningPlans = MutableStateFlow<List<LearningPlan>>(emptyList())
+    val learningPlans =  _learningPlans.asStateFlow()
 
     init {
-        _learningPlan.value = repository.getLearningPlan()
+        _learningPlans.value = repository.getLearningPlans()
     }
 }
