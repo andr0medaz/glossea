@@ -128,7 +128,7 @@ fun PromoBannerSection(modifier: Modifier = Modifier) {
         ) {
             Box(modifier = Modifier.fillMaxSize()) {
                 Image(
-                    painter = painterResource(id = R.drawable.wrong),
+                    painter = painterResource(id = R.drawable.banner),
                     contentDescription = "Promo Background",
                     contentScale = ContentScale.Crop,
                     modifier = Modifier.fillMaxSize()
@@ -140,8 +140,8 @@ fun PromoBannerSection(modifier: Modifier = Modifier) {
                         .padding(16.dp),
                     verticalArrangement = Arrangement.Center
                 ) {
-                    Text("Diskon 50%", fontSize = 20.sp, fontWeight = FontWeight.Bold, color = Color.White)
-                    Text("untuk Berlangganan 1 tahun", fontSize = 14.sp, color = Color.White)
+//                    Text("Diskon 50%", fontSize = 20.sp, fontWeight = FontWeight.Bold, color = Color.White)
+//                    Text("untuk Berlangganan 1 tahun", fontSize = 14.sp, color = Color.White)
                 }
             }
         }

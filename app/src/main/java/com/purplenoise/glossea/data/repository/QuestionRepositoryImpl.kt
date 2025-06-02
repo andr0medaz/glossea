@@ -8,8 +8,10 @@ import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
-class QuestionRepositoryImpl @Inject constructor() : QuestionRepository {
-    private val firestore = FirebaseFirestore.getInstance()
+class QuestionRepositoryImpl @Inject constructor(
+    private val firestore: FirebaseFirestore
+) : QuestionRepository {
+//    private val firestore = FirebaseFirestore.getInstance()
 
     override suspend fun getQuestions(): List<Question> = withContext(Dispatchers.IO) {
         val snapshot = firestore.collection("questions").get().await()
