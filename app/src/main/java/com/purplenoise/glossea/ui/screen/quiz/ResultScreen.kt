@@ -9,6 +9,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -47,10 +48,14 @@ fun ResultScreen(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            // Ganti R.drawable.result_illustration dengan aset gambar Anda
+
             Image(
                 painter = painterResource(id = R.drawable.result),
-                contentDescription = "Test Result Illustration"
+                contentDescription = "Test Result Illustration",
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .aspectRatio(16f/9f),
+                contentScale = ContentScale.Crop
             )
 
             Spacer(modifier = Modifier.height(24.dp))

@@ -32,7 +32,7 @@ fun QuizScreen(
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
 
-    // UNTUK MENDENGARKAN KAPAN KUIS SELESAI
+    // UNTUK Listen KAPAN KUIS SELESAI
     // LaunchedEffect akan berjalan hanya satu kali ketika isQuizFinished berubah menjadi true
     LaunchedEffect(state.isQuizFinished) {
         if (state.isQuizFinished) {
